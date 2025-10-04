@@ -55,19 +55,12 @@
 						<pre><code class="lang-js">
 // Example using jQuery
 $.ajax({
-	url: "https://wester.games/opensitecounter/get",
+	url: "https://wester.games/opensitecounter/register",
 	type: "POST",
 	contentType: "application/json",
 	data: JSON.stringify({ hostname: "example.org" }),
 	success: function(response) {
 		console.log(response);
-		// {
-		//   ok: true,
-		//   hostname: "example.org",
-		//   total_occurrences: 128,
-		//   unique_visitors: 92,
-		//   graph_png_base64: "..."
-		// }
 	},
 	error: function() {
 		console.error("Server error");
