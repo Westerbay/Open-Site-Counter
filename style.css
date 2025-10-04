@@ -257,11 +257,13 @@ main #modal.hidden{
 }
 main .modal-content{
   background:var(--card);
-  padding:28px 32px;
+  padding:3em 4em;
   border-radius:var(--radius);
   box-shadow:var(--shadow);
   max-width:650px;
   width:90%;
+  max-height:90%;
+  overflow: auto;
   text-align:center;
   animation: floatIn .4s ease;
 }
