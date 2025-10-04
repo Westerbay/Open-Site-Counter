@@ -51,15 +51,15 @@ main{
   background-blend-mode: lighten;
 }
 
-#getStatsForm, #result{
+main #getStatsForm, main #result{
   width:min(680px, 100%);
 }
 
-#result.hidden {
+main #result.hidden {
   opacity: 0;
 }
 
-h2{
+main h2{
   margin:0 0 8px 0; 
   font-weight:800;
   font-size: 2em;
@@ -72,7 +72,7 @@ h2{
 }
 
 /* ========== Form ========== */
-#getStatsForm{
+main #getStatsForm{
   background:var(--card);
   border-radius:var(--radius);
   box-shadow:var(--shadow);
@@ -84,7 +84,7 @@ h2{
   animation: floatIn .6s cubic-bezier(.2,.8,.2,1);
 }
 
-input[type="text"]{
+main input[type="text"]{
   width:100%;
   border:1px solid rgba(255,255,255,.08);
   background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
@@ -95,15 +95,15 @@ input[type="text"]{
   outline:none;
   transition:border .2s ease, transform .06s ease;
 }
-input::placeholder{ color:var(--muted) }
-input:focus{
+main input::placeholder{ color:var(--muted) }
+main input:focus{
   border-color: var(--primary);
   box-shadow: var(--shadow-soft);
   transform: translateY(-1px);
 }
-input:focus-visible{ outline: var(--ring) }
+main input:focus-visible{ outline: var(--ring) }
 
-button[type="submit"]{
+main button[type="submit"]{
   cursor:pointer;
   border:none;
   padding:14px 18px;
@@ -117,17 +117,17 @@ button[type="submit"]{
   box-shadow: 0 8px 18px rgba(62,96,255,.35);
   transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
 }
-button[type="submit"]:hover{
+main button[type="submit"]:hover{
   transform: translateY(-2px);
   filter: brightness(1.05);
   box-shadow: 0 12px 26px rgba(62,96,255,.4);
 }
-button[type="submit"]:active{
+main button[type="submit"]:active{
   transform: translateY(0);
   box-shadow: 0 6px 14px rgba(62,96,255,.35);
 }
 
-#result{
+main #result{
   background:var(--card);
   border-radius:var(--radius);
   box-shadow:var(--shadow-soft);
@@ -135,32 +135,32 @@ button[type="submit"]:active{
   border:1px solid rgba(255,255,255,.06);
   margin-top:22px;
 }
-#result h3{
+main #result h3{
   margin-top:0;
   font-size:1.25rem;
   color:var(--primary);
 }
-#result a{
+main #result a{
   color:var(--primary);
   text-decoration:none;
 }
-#result a:hover{ text-decoration:underline }
-#result ul{
+main #result a:hover{ text-decoration:underline }
+main #result ul{
   list-style:none;
   padding-left:0;
   margin:10px 0 0 0;
 }
-#result li{
+main #result li{
   padding:6px 0;
   border-bottom:1px solid rgba(255,255,255,.08);
 }
-#result li:last-child{ border-bottom:none }
-#result strong{
+main #result li:last-child{ border-bottom:none }
+main #result strong{
   color:var(--success);
 }
 
 /* Graph */
-#result .graph{
+main #result .graph{
   display:block;
   width:100%;
   margin-top:18px;
@@ -170,22 +170,22 @@ button[type="submit"]:active{
 }
 
 /* State message */
-#result p{
+main #result p{
   margin:0;
   padding:12px 0;
   text-align:center;
 }
-#result p.error{
+main #result p.error{
   color:var(--danger);
   font-weight:600;
 }
-#result p.loading{
+main #result p.loading{
   color:var(--muted);
   font-style:italic;
 }
 
 /* Loading */
-.loading::after{
+main .loading::after{
   content: " ⟳";
   display:inline-block;
   animation: spin 1s linear infinite;
@@ -208,24 +208,24 @@ button[type="submit"]:active{
 
 
 /* ========== Intro section ========== */
-.intro{
+main .intro{
   text-align:center;
   color:var(--muted);
   font-size:1.2em;
   margin:0 0 16px 0; 
   line-height:1.4; 
 }
-.intro a{
+main .intro a{
   color:var(--primary);
   font-weight:600;
   text-decoration:none;
 }
-.intro a:hover{
+main .intro a:hover{
   text-decoration:underline;
 }
 
 /* ========== Modal overlay ========== */
-#overlay{
+main #overlay{
   position:fixed;
   inset:0;
   background:rgba(0,0,0,.6);
@@ -234,13 +234,13 @@ button[type="submit"]:active{
   opacity:1;
   transition:opacity .3s ease;
 }
-#overlay.hidden{
+main #overlay.hidden{
   opacity:0;
   pointer-events:none;
 }
 
 /* ========== Modal ========== */
-#modal{
+main #modal{
   position:fixed;
   inset:0;
   display:flex;
@@ -250,12 +250,12 @@ button[type="submit"]:active{
   opacity:1;
   transition:opacity .3s ease, transform .3s ease;
 }
-#modal.hidden{
+main #modal.hidden{
   opacity:0;
   pointer-events:none;
   transform:scale(0.98);
 }
-.modal-content{
+main .modal-content{
   background:var(--card);
   padding:28px 32px;
   border-radius:var(--radius);
@@ -265,15 +265,15 @@ button[type="submit"]:active{
   text-align:center;
   animation: floatIn .4s ease;
 }
-.modal-content h3{
+main .modal-content h3{
   margin-top:0;
   color:var(--primary);
 }
-.modal-content p{
+main .modal-content p{
   color:var(--muted);
   margin-bottom:20px;
 }
-.modal-content button{
+main .modal-content button{
   background:var(--primary);
   color:white;
   border:none;
@@ -283,16 +283,16 @@ button[type="submit"]:active{
   cursor:pointer;
   transition:filter .2s ease, transform .08s ease;
 }
-.modal-content button:hover{
+main .modal-content button:hover{
   filter:brightness(1.1);
   transform:translateY(-1px);
 }
-.modal-content button:active{
+main .modal-content button:active{
   transform:translateY(0);
 }
 
 /* ========== Developer code style ========== */
-pre{
+main pre{
   background: rgba(255,255,255,0.04);
   border:1px solid rgba(255,255,255,0.07);
   border-radius: 10px;
@@ -301,15 +301,15 @@ pre{
   margin:10px 0;
   box-shadow: inset 0 0 12px rgba(0,0,0,.2);
 }
-code{
+main code{
   font-family: "Fira Code", Consolas, monospace;
   font-size: 0.9rem;
   color: #a8c7ff;
   white-space: pre;
 }
-pre code .comment{ color:#6b799c; font-style:italic; }
-pre code .keyword{ color:#86d3ff; }
-pre code .string{ color:#ffd580; }
-pre code .number{ color:#a1e5a1; }
+main pre code .comment{ color:#6b799c; font-style:italic; }
+main pre code .keyword{ color:#86d3ff; }
+main pre code .string{ color:#ffd580; }
+main pre code .number{ color:#a1e5a1; }
 
 
