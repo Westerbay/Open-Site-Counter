@@ -22,8 +22,9 @@ class Register {
 
 }
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
     const register = new Register();
     register.request(window.location.hostname);
     register.request(window.location.href);
 });
+
