@@ -1,5 +1,9 @@
 class Register {
 
+    constructor() {
+        this.hostname = window.location.hostname;
+    }
+
     isValid() {
         return this.hostname != "" && this.hostname != "localhost";
     }
