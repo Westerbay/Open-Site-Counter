@@ -8,12 +8,13 @@ class Register {
         return this.hostname != "" && this.hostname != "localhost";
     }
 
-    request() {
+    request() {        
         if (!this.isValid()) {
             console.log("Could not register the visit, please verify your hostname");
+            return;
         }
         $.ajax({
-            url: "http://127.0.0.1:5001/register",
+            url: "https://wester.games/opensitecounter/register",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ hostname: this.hostname }),

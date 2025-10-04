@@ -2,10 +2,15 @@ class DisplayInformation {
 
     constructor() {
         this.hostnameInput = $("#hostnameInput");
+        this.result = $("#result");
+        this.getStatsForm = $("#getStatsForm");
+        this.openModal = $("#openModal");
+        this.overlayModal = $("#overlay, #modal");
+        this.closeModalOverlay = $("#closeModal, #overlay");
     }   
 
     addEventListeners() {
-        $("#getStatsForm").on("submit", (e) => {
+        this.getStatsForm.on("submit", (e) => {
             e.preventDefault();
             const hostname = this.hostnameInput.val().trim();
             if (!hostname) {
@@ -13,44 +18,50 @@ class DisplayInformation {
                 return;
             }
 
-            $("#result").html("<p>Loading...</p>");
+            this.result.html("<p>Loading...</p>");
             this.sendRequest(hostname);
-            
+        });
+        this.openModal.on("click", (e) => {
+            e.preventDefault();
+            this.overlayModal.removeClass("hidden");
+        });
+        this.closeModalOverlay.on("click", () => {
+            this.overlayModal.addClass("hidden");
         });
     }
 
     sendRequest(hostname) {
+        this.result.removeClass("hidden");
         $.ajax({
-            url: "http://127.0.0.1:5001/get",
+            url: "https://wester.games/opensitecounter/get",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ hostname: hostname }),
-            success: this.success,
-            error: this.error
+            success: this.success.bind(this),
+            error: this.error.bind(this)
         });
     }
 
     success(response) {
         if (!response.ok) {
-            $("#result").html("<p style='color:red;'>Erreur : " + (response.message || "inconnue") + "</p>");
+            this.result.html("<p class='error'>Error : " + (response.message || "unknown") + "</p>");
             return;
         }
         const html = `
-            <h3>Résultats pour <em>${response.hostname}</em></h3>
+            <h3>Results for <a href="${response.hostname}">${response.hostname}</a></h3>
             <ul>
-                <li>Total connexions : <strong>${response.total_occurrences}</strong></li>
-                <li>Visiteurs uniques : <strong>${response.unique_visitors}</strong></li>
+                <li>Total connections : <strong>${response.total_occurrences}</strong></li>
+                <li>Unique connections : <strong>${response.unique_visitors}</strong></li>
             </ul>
-            <img src="data:image/png;base64,${response.graph_png_base64}" 
-                alt="Graphique des connexions" 
-                style="max-width:100%; border:1px solid #ccc; border-radius:8px; box-shadow:0 0 8px rgba(0,0,0,0.1);" />
+            <img class="graph" src="data:image/png;base64,${response.graph_png_base64}" 
+                alt="Connection graph" />
         `;
-        $("#result").html(html);
+        this.result.html(html);
     }
 
     error(xhr) {
         console.error(xhr);
-        $("#result").html("<p style='color:red;'>Server error.</p>");
+        this.result.html("<p class='error'>Server error.</p>");
     }
 
 }
