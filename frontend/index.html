@@ -48,19 +48,12 @@
 						<pre><code class="lang-js">
 // Example using jQuery
 $.ajax({
-	url: "http://127.0.0.1:5001/get",
+	url: "http://127.0.0.1:5001/register",
 	type: "POST",
 	contentType: "application/json",
 	data: JSON.stringify({ hostname: "example.org" }),
 	success: function(response) {
 		console.log(response);
-		// {
-		//   ok: true,
-		//   hostname: "example.org",
-		//   total_occurrences: 128,
-		//   unique_visitors: 92,
-		//   graph_png_base64: "..."
-		// }
 	},
 	error: function() {
 		console.error("Server error");
