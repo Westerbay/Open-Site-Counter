@@ -1,7 +1,7 @@
 class Register {
 
     constructor() {
-        this.hostname = window.location.hostname;
+        this.hostname = window.location.hostname + window.location.pathname;
     }
 
     isValid() {
