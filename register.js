@@ -13,14 +13,11 @@ class Register {
             console.log("Could not register the visit, please verify your hostname");
             return;
         }
-        $.ajax({
-            url: "https://wester.games/opensitecounter/register",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({ hostname: hostname }),
-            success: this.success,
-            error: this.error
-        });
+        fetch("https://wester.games/opensitecounter/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ hostname: hostname })
+        })
     }
 
     success(response) {
