@@ -1,21 +1,18 @@
 /* ========== Theme ========== */
 :root{
-  --bg: #0f1223;
-  --bg-soft: #141836;
-  --card: #191f49;
-  --text: #e7e9f3;
-  --muted: #aeb4d6;
-  --primary: #6c8dff;
-  --primary-strong: #3e60ff;
-  --success: #46d39a;
-  --danger: #ff6b6b;
-  --ring: 0 0 0 6px rgba(108,141,255,.15);
-  --radius: 18px;
-  --shadow: 0 10px 30px rgba(10,12,28,.35);
-  --shadow-soft: 0 6px 18px rgba(10,12,28,.25);
+  --bg: #f7f8ff;
+  --bg-soft: #eef1ff;
+  --card: #ffffff;
+  --text: #16192f;
+  --muted: #596089;
+  --primary: #3e60ff;
+  --primary-strong: #2345ff;
+  --ring: 0 0 0 6px rgba(62,96,255,.15);
+  --shadow: 0 12px 32px rgba(20,24,54,.12);
+  --shadow-soft: 0 6px 18px rgba(20,24,54,.10);
 }
 
-@media (prefers-color-scheme: light){
+@media (prefers-color-scheme: light) {
   :root{
     --bg: #f7f8ff;
     --bg-soft: #eef1ff;
