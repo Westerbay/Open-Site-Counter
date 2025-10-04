@@ -1,7 +1,10 @@
 class Register {
 
     constructor() {
-        this.hostname = window.location.hostname + window.location.pathname;
+        this.hostname = window.location.hostname;
+        if (window.location.pathname != "/") {
+            this.hostname += window.location.pathname;
+        }
     }
 
     isValid() {
