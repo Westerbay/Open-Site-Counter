@@ -1,14 +1,10 @@
 class Register {
 
-    constructor() {
-        this.hostname = window.location.hostname;
-    }
-
     isValid() {
         return this.hostname != "" && this.hostname != "localhost";
     }
 
-    request() {        
+    request(hostname) {        
         if (!this.isValid()) {
             console.log("Could not register the visit, please verify your hostname");
             return;
@@ -17,7 +13,7 @@ class Register {
             url: "https://wester.games/opensitecounter/register",
             type: "POST",
             contentType: "application/json",
-            data: JSON.stringify({ hostname: this.hostname }),
+            data: JSON.stringify({ hostname: hostname }),
             success: this.success,
             error: this.error
         });
@@ -38,5 +34,6 @@ class Register {
 
 $(document).ready(function() {
     const register = new Register();
-    register.request();
+    register.request(window.location.hostname);
+    register.request(window.location.href);
 });
