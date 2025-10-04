@@ -1,7 +1,5 @@
-from core.config import FERNET
+import hashlib
 
-def encrypt(value: str) -> str:
-    return FERNET.encrypt(value.encode()).decode()
 
-def decrypt(token: str) -> str:
-    return FERNET.decrypt(token.encode()).decode()
+def hash_value(value: str) -> str:
+    return hashlib.sha256(value.encode()).hexdigest()

@@ -5,11 +5,11 @@ from repositories.website_repo import WebsiteRepository
 
 router = APIRouter()
 
-class RegisterIn(BaseModel):
+class Payload(BaseModel):
     hostname: str
 
 @router.post("/register")
-async def register(payload: RegisterIn, request: Request):
+async def register(payload: Payload, request: Request):
     ip = request.headers.get("x-forwarded-for")
     if ip and "," in ip:
         ip = ip.split(",", 1)[0].strip()
@@ -21,6 +21,7 @@ async def register(payload: RegisterIn, request: Request):
 
     return {"ok": True, "message": "registered"}
 
-@router.get("/get")
-async def get_placeholder():
-    return {"ok": True, "message": "GET route à définir"}
+@router.post("/get")
+async def get(payload: Payload):
+    service = WebsiteService(WebsiteRepository())
+    return service.get_stats(payload.hostname)

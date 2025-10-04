@@ -1,6 +1,5 @@
 fastapi
 uvicorn[standard]
 sqlalchemy
-cryptography
 python-dotenv
-
+matplotlib

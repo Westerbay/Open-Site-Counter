@@ -11,11 +11,21 @@
 		<link href='https://westerbay.github.io/Home-Page/style/footer.css' rel='stylesheet'>
 		<link rel="icon" href="https://westerbay.github.io/Home-Page/img/icon.png">
 		<link href='style.css' rel='stylesheet'>
+
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script src="display.js"></script>
+    	<script src="main.js"></script>
+		<script src="register.js"></script>
 	</head>
 	<body>
 		<main>
+			<h2>Consulter les statistiques</h2>
+			<form id="getStatsForm">
+				<input type="text" id="hostnameInput" placeholder="example.org" required>
+				<button type="submit">Obtenir les stats</button>
+			</form>
+			<div id="result" style="margin-top:20px;"></div>
 		</main>
-		<script src="script/main.js"></script>
 		<script>load("Project");</script>
 	</body>
 </html>

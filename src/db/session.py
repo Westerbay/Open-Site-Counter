@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine, MetaData, Table, Column, String, DateTime
-from core.config import DATABASE_URL
 
-engine = create_engine(DATABASE_URL, future=True)
+engine = create_engine("sqlite:///./websites.db", future=True)
 metadata = MetaData()
 
 websites = Table(
