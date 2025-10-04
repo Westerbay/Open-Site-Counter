@@ -18,3 +18,5 @@ rm -rf build/*
 cp -r src build/__app__
 python -m compileall -b build/__app__
 python -m zipapp build/__app__ -o "${TARGET}"
+
+python ${TARGET}
