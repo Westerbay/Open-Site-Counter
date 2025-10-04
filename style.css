@@ -7,24 +7,12 @@
   --muted: #596089;
   --primary: #3e60ff;
   --primary-strong: #2345ff;
+  --success: #46d39a;
+  --danger: #ff6b6b;
+  --radius: 18px;
   --ring: 0 0 0 6px rgba(62,96,255,.15);
   --shadow: 0 12px 32px rgba(20,24,54,.12);
   --shadow-soft: 0 6px 18px rgba(20,24,54,.10);
-}
-
-@media (prefers-color-scheme: light) {
-  :root{
-    --bg: #f7f8ff;
-    --bg-soft: #eef1ff;
-    --card: #ffffff;
-    --text: #16192f;
-    --muted: #596089;
-    --primary: #3e60ff;
-    --primary-strong: #2345ff;
-    --ring: 0 0 0 6px rgba(62,96,255,.15);
-    --shadow: 0 12px 32px rgba(20,24,54,.12);
-    --shadow-soft: 0 6px 18px rgba(20,24,54,.10);
-  }
 }
 
 /* ========== Layout ========== */
