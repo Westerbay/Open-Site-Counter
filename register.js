@@ -20,17 +20,6 @@ class Register {
         })
     }
 
-    success(response) {
-        if (!response.ok) {
-            console.log("Could not register the visit, please verify your hostname");
-        }
-    }
-
-    error(xhr) {
-        console.log(xhr);
-        console.log("Server error");
-    }
-
 }
 
 $(document).ready(function() {
