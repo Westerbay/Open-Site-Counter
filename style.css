@@ -30,16 +30,6 @@
   }
 }
 
-main {
-  margin:0;
-  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans","Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 20% -10%, rgba(108,141,255,.15), transparent 60%),
-    radial-gradient(900px 500px at 100% 0%, rgba(70,211,154,.12), transparent 60%),
-    var(--bg);
-}
-
 /* ========== Layout ========== */
 main {
   display:grid;
@@ -62,7 +52,7 @@ main #result.hidden {
 main h2{
   margin:0 0 8px 0; 
   font-weight:800;
-  font-size: 2em;
+  font-size: 1.8em;
   letter-spacing:.2px;
   text-align:center;
   background: linear-gradient(90deg, var(--primary), var(--success));
@@ -211,7 +201,7 @@ main .loading::after{
 main .intro{
   text-align:center;
   color:var(--muted);
-  font-size:1.2em;
+  font-size:1em;
   margin:0 0 16px 0; 
   line-height:1.4; 
 }
@@ -240,7 +230,7 @@ main #overlay.hidden{
 }
 
 /* ========== Modal ========== */
-main #modal{
+#modal{
   position:fixed;
   inset:0;
   display:flex;
@@ -250,12 +240,12 @@ main #modal{
   opacity:1;
   transition:opacity .3s ease, transform .3s ease;
 }
-main #modal.hidden{
+#modal.hidden{
   opacity:0;
   pointer-events:none;
   transform:scale(0.98);
 }
-main .modal-content{
+.modal-content{
   background:var(--card);
   padding:3em 4em;
   border-radius:var(--radius);
@@ -267,15 +257,15 @@ main .modal-content{
   text-align:center;
   animation: floatIn .4s ease;
 }
-main .modal-content h3{
+.modal-content h3{
   margin-top:0;
   color:var(--primary);
 }
-main .modal-content p{
+.modal-content p{
   color:var(--muted);
   margin-bottom:20px;
 }
-main .modal-content button{
+.modal-content button{
   background:var(--primary);
   color:white;
   border:none;
@@ -285,16 +275,16 @@ main .modal-content button{
   cursor:pointer;
   transition:filter .2s ease, transform .08s ease;
 }
-main .modal-content button:hover{
+.modal-content button:hover{
   filter:brightness(1.1);
   transform:translateY(-1px);
 }
-main .modal-content button:active{
+.modal-content button:active{
   transform:translateY(0);
 }
 
 /* ========== Developer code style ========== */
-main pre{
+pre{
   background: rgba(255,255,255,0.04);
   border:1px solid rgba(255,255,255,0.07);
   border-radius: 10px;
@@ -303,15 +293,15 @@ main pre{
   margin:10px 0;
   box-shadow: inset 0 0 12px rgba(0,0,0,.2);
 }
-main code{
+code{
   font-family: "Fira Code", Consolas, monospace;
   font-size: 0.9rem;
   color: #a8c7ff;
   white-space: pre;
 }
-main pre code .comment{ color:#6b799c; font-style:italic; }
-main pre code .keyword{ color:#86d3ff; }
-main pre code .string{ color:#ffd580; }
-main pre code .number{ color:#a1e5a1; }
+pre code .comment{ color:#6b799c; font-style:italic; }
+pre code .keyword{ color:#86d3ff; }
+pre code .string{ color:#ffd580; }
+pre code .number{ color:#a1e5a1; }
 
 
