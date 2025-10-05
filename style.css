@@ -27,7 +27,7 @@ main {
 }
 
 main #getStatsForm, main #result{
-  width:min(680px, 100%);
+  width:min(750px, 100%);
 }
 
 main #result.hidden {
@@ -112,7 +112,7 @@ main #result{
 }
 main #result h3{
   margin-top:0;
-  font-size:1.25rem;
+  font-size: 1em;
   color:var(--primary);
 }
 main #result a{
@@ -217,6 +217,7 @@ main #overlay.hidden{
 /* ========== Modal ========== */
 #modal{
   position:fixed;
+  background: rgba(0, 0, 0, 0.5);
   inset:0;
   display:flex;
   align-items:center;
@@ -232,10 +233,10 @@ main #overlay.hidden{
 }
 .modal-content{
   background:var(--card);
-  padding:3em 4em;
+  padding: 2em 3.5em;
   border-radius:var(--radius);
   box-shadow:var(--shadow);
-  max-width:650px;
+  max-width:800px;
   width:90%;
   max-height:90%;
   overflow: auto;
@@ -286,7 +287,7 @@ code{
 }
 pre code .comment{ color:#6b799c; font-style:italic; }
 pre code .keyword{ color:#86d3ff; }
-pre code .string{ color:#ffd580; }
-pre code .number{ color:#a1e5a1; }
+pre code .number{ color:#ffd580; }
+pre code .string{ color:#a1e5a1; }
 
 
